@@ -1,0 +1,19 @@
+<div>
+    <nav class="navbar navbar-inverse navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" ng-href="/">Product App</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li ng-class="{active: $ctrl.route.current.activetab == 'home'}">
+                        <a ng-href="/">Home</a>
+                    </li>
+                    <li ng-class="{active: $ctrl.route.current.activetab == 'order'}">
+                        <a href="#!order">Order(s)</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Product App</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="js/libs/angular.min.js"></script>
+    <script src="js/libs/angular-route.min.js"></script>
+    <script src="js/app.module.js"></script>
+    <script src="js/routes/app.routes.js"></script>
+    <script src="js/filters/app.filters.js"></script>
+    <script src="js/services/product.service.js"></script>
+    <script src="js/services/order.service.js"></script>
+    <script src="js/components/navbar/navbar.component.js"></script>
+    <script src="js/components/product/product.component.js"></script>
+    <script src="js/components/order/order.component.js"></script>
+</head>
+
+<body id="home" data-ng-app="ProductApp">
+
+    <navbar-component></navbar-component>
+    <br><br><br>
+
+    <div>
+        <div><ng-view /></div>
+    </div>
+
+</body>
+</html>
