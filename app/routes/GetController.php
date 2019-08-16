@@ -30,6 +30,16 @@ class GetController implements IRoutes {
                 $ret = $product->GetAllByType($action);
             break;
 
+            case 'cartCountByUserID':
+                $cart = new CartController($db);
+                $ret = $cart->CountAllByUserID($data);
+            break;
+
+            case 'cartByUserID':
+                $cart = new CartController($db);
+                $ret = $cart->GetAllByUserID($data);
+            break;
+
             case 'order':
                 $order = new OrderController($db);
                 $ret = $order->GetAll();

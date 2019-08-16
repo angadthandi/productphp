@@ -42,6 +42,15 @@ class CreateSqliteDB {
             );'
         );
 
+        // TODO - run in DB
+        $db->exec(
+            'CREATE TABLE `cart` (
+                `id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                `user_id`	INTEGER NOT NULL,
+                `product_id`	INTEGER NOT NULL
+            );'
+        );
+
         $db->exec(
             'CREATE TABLE `order` (
                 `id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
@@ -58,12 +67,23 @@ class CreateSqliteDB {
             );'
         );
 
+        // TODO - run in DB
+        $db->exec(
+            'CREATE TABLE `user_type` (
+                `id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                `type`	VARCHAR(20) NOT NULL
+            );'
+        );
+
+        // TODO - run in DB
         $db->exec(
             'CREATE TABLE `user` (
                 `id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-                `username`	VARCHAR(50) NOT NULL,
-                `password`	VARCHAR(50) NOT NULL,
-                `email`	VARCHAR(100) NOT NULL
+                `user_type_id`	INTEGER NOT NULL,
+                `username`	VARCHAR(50) NULL,
+                `password`	VARCHAR(50) NULL,
+                `email`	VARCHAR(100) NULL,
+                `token`	VARCHAR(100) NULL
             );'
         );
 
@@ -73,6 +93,18 @@ class CreateSqliteDB {
         );
         $db->exec(
             "INSERT INTO product_type (type) VALUES ('drink');"
+        );
+
+        // TODO - run in DB
+        // insert default user types
+        $db->exec(
+            "INSERT INTO user_type (type) VALUES ('admin');"
+        );
+        $db->exec(
+            "INSERT INTO user_type (type) VALUES ('user');"
+        );
+        $db->exec(
+            "INSERT INTO user_type (type) VALUES ('guest');"
         );
 
         $db->commit();

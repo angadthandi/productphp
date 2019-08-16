@@ -26,6 +26,11 @@ class PostController implements IRoutes {
                 $ret = $product->Save($action, $dataArr);
             break;
 
+            case 'cart':
+                $cart = new CartController($db);
+                $ret = $cart->Save($dataArr);
+            break;
+
             case 'order':
                 $order = new OrderController($db);
                 $ret = $order->Save($dataArr);
