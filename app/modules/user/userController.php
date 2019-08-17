@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . "/usrModel.php";
+require_once __DIR__ . "/userModel.php";
 
 class UserController {
     private $db;
@@ -10,6 +10,12 @@ class UserController {
         $this->db = $db;
 
         $this->userModel = new UserModel($this->db);
+    }
+
+    public function Authenticate(array $data) {
+        error_log('TODO Authenticate!');
+        $ret = [];
+        return $ret;
     }
 
     public function GetAll() {

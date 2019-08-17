@@ -47,7 +47,8 @@ switch ($method) {
 
     case PostController::Type():
     case PutController::Type():
-        $postData = json_decode(file_get_contents('php://input'), true);
+        $data = json_decode(file_get_contents('php://input'), true);
+        $postData = isset($data['params']) ? $data['params'] : [];
 
         $handler = new RoutesController(new PostController());
         $response = $handler->Handle($postData);

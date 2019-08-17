@@ -6,6 +6,14 @@
     function HomeController(HomeService) {
         var ctrl = this;
 
+        ctrl.loginAsGuest = function() {
+            HomeService.GuestAuthenticate().
+                then(function(responseData){
+                    console.log('TODO Set Authenticate Cookie!');
+                    console.log(responseData);
+                });
+        };
+
         // init function
         ctrl.init = function() {
 
